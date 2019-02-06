@@ -1,0 +1,10 @@
+1. 
+
+- Use query = "search_phrase OR another_search_phrase -filter:retweets AND -filter:replies"
+- Or use another API 
+- extract words from twitter object
+
+
+2. 
+
+- 
