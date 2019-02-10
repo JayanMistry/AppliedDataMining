@@ -1,0 +1,16 @@
+1. Created api account - check account and pulled data using oauth config
+
+python3 search tweets.py "#lovelancaster" 500
+
+python3 search tweets.py "#lovelancaster" 500
+
+
+
+2.
+
+
+3.
+
+4
+
+5.
