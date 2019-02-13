@@ -77,80 +77,76 @@ the slides and completing the questions when prompted. There are some <a href="#
 		<p>Find all occurrences of <i>hat</i>, <i>hit</i>, <i>hot</i> and <i>hut</i>.</p>
 		<div class="text"><p>Jimmy's <span class="highlight">hat</span> couldn't protect him from the heat of the <span class="highlight">hot</span> sun, so he <span class="highlight">hit</span> the <span class="highlight">hut</span>.</p></div>
 		<div class="answer">
-			<p>Answer: /<input type="text" class="regex" size="50" value="h[a-z]t">/g</p>
+			<p>Answer: /<input type="text" class="regex" size="50" value="h[a,i,o,u]t">/g</p>
 		</div>
 	</div>
 	<div class="question">
 		<h3>Question 3.</h3>
 		<p>Find all occurrences of <i>hat</i>, <i>hit</i>, <i>hot</i> and <i>hut</i>.</p>
-		<div class="text"><p>Jimmy's hat couldn't protect him from the heat of
- the hot sun, so he hit the hut. The rhythm in the hut wasn't enough to 
-withstand the heat.</p></div>
+		<div class="text"><p>Jimmy's <span class="highlight">hat</span> couldn't protect him from the heat of the <span class="highlight">hot</span> sun, so he <span class="highlight">hit</span> the <span class="highlight">hut</span>. The rhythm in the <span class="highlight">hut</span> wasn't enough to withstand the heat.</p></div>
 		<div class="answer">
-			<p>Answer: /<input type="text" class="regex" size="50">/g</p>
+			<p>Answer: /<input type="text" class="regex" size="50" value="h[a,i,o,u]t">/g</p>
 		</div>
 	</div>
 	<div class="question">
 		<h3>Question 4.</h3>
 		<p>Find all letters in the sentence.</p>
-		<div class="text"><p>The cat sat on the mat.</p></div>
+		<div class="text"><p><span class="highlight">T</span><span class="highlight">h</span><span class="highlight">e</span> <span class="highlight">c</span><span class="highlight">a</span><span class="highlight">t</span> <span class="highlight">s</span><span class="highlight">a</span><span class="highlight">t</span> <span class="highlight">o</span><span class="highlight">n</span> <span class="highlight">t</span><span class="highlight">h</span><span class="highlight">e</span> <span class="highlight">m</span><span class="highlight">a</span><span class="highlight">t</span>.</p></div>
 		<div class="answer">
-			<p>Answer: /<input type="text" class="regex" size="50">/g</p>
+			<p>Answer: /<input type="text" class="regex" size="50" value="[a-zA-Z]">/g</p>
 		</div>
 	</div>
 	<div class="question">
 		<h3>Question 5.</h3>
 		<p>Find all non-letters in the sentence.</p>
-		<div class="text"><p>The cat sat on the mat.</p></div>
+		<div class="text"><p>The<span class="highlight"> </span>cat<span class="highlight"> </span>sat<span class="highlight"> </span>on<span class="highlight"> </span>the<span class="highlight"> </span>mat<span class="highlight">.</span></p></div>
 		<div class="answer">
-			<p>Answer: /<input type="text" class="regex" size="50">/g</p>
+			<p>Answer: /<input type="text" class="regex" size="50" value="[^a-zA-Z0-9]">/g</p>
 		</div>
 	</div>
 	<div class="question">
 		<h3>Question 6.</h3>
 		<p>Find all 4-letter words starting with h and ending in t</p>
-		<div class="text"><p>Jimmy's hat couldn't protect him from the heat of
- the hot sun, so he hit the hut. The rhythm in the hut wasn't enough to 
-withstand the heat.</p></div>
+		<div class="text"><p>Jimmy's hat couldn't protect him from the <span class="highlight">heat</span> of the hot sun, so he hit the hut. The rhythm in the hut wasn't enough to withstand the <span class="highlight">heat</span>.</p></div>
 		<div class="answer">
-			<p>Answer: /<input type="text" class="regex" size="50">/g</p>
+			<p>Answer: /<input type="text" class="regex" size="50" value="h[a-z][a-z]t">/g</p>
 		</div>
 	</div>
 	<div class="question">
 		<h3>Question 7.</h3>
 		<p>Find all words containing <em>pick</em>.</p>
-		<div class="text"><p>Peter Piper picked a peck of pickled peppers.
-														<br>Did Peter Piper pick a peck of pickled peppers?
-														<br>If Peter Piper picked a peck of pickled peppers,
-														<br>where's the peck of pickled peppers Peter Piper picked?</p></div>
+		<div class="text"><p>Peter Piper <span class="highlight">picked</span> a peck of <span class="highlight">pickled</span> peppers.
+														<br>Did Peter Piper <span class="highlight">pick</span> a peck of <span class="highlight">pickled</span> peppers?
+														<br>If Peter Piper <span class="highlight">picked</span> a peck of <span class="highlight">pickled</span> peppers,
+														<br>where's the peck of <span class="highlight">pickled</span> peppers Peter Piper <span class="highlight">picked</span>?</p></div>
 		<div class="answer">
-			<p>Answer: /<input type="text" class="regex" size="50">/g</p>
+			<p>Answer: /<input type="text" class="regex" size="50" value="[a-zA-Z]*pick[a-zA-Z]*">/g</p>
 		</div>
 	</div>
 	<div class="question">
 		<h3>Question 8.</h3>
 		<p>Peter's 'c' key is broken, can you still find all words containing <em>pick</em>, or at least those words that should do.</p>
-		<div class="text"><p>Peter Piper piked a pek of pickled peppers.
-														<br>Did Peter Piper pick a pek of pikled peppers?
-														<br>If Peter Piper piked a peck of pickled peppers,
-														<br>where's the pek of pikled peppers Peter Piper picked?</p></div>
+		<div class="text"><p>Peter Piper <span class="highlight">pik</span>ed a pek of <span class="highlight">pickled</span> peppers.
+														<br>Did Peter Piper <span class="highlight">pick</span> a pek of <span class="highlight">pik</span>led peppers?
+														<br>If Peter Piper <span class="highlight">pik</span>ed a peck of <span class="highlight">pickled</span> peppers,
+														<br>where's the pek of <span class="highlight">pik</span>led peppers Peter Piper <span class="highlight">picked</span>?</p></div>
 		<div class="answer">
-			<p>Answer: /<input type="text" class="regex" size="50">/g</p>
+			<p>Answer: /<input type="text" class="regex" size="50" value="[a-zA-Z]*(pik)|(pick)[a-zA-Z]*">/g</p>
 		</div>
 	</div>
 	<div class="question">
 		<h3>Question 9.</h3>
 		<p>Find every word in this tongue-twister. Note, this is basic tokenisation, you'll be doing a lot more of this later.</p>
-		<div class="text"><p>You've no need to light a night-light
-														<br>On a light night like tonight,
-														<br>For a night-light's light's a slight light,
-														<br>And tonight's a night that's light.
-														<br>When a night's light, like tonight's light,
-														<br>It is really not quite right
-														<br>To light night-lights with their slight lights
-														<br>On a light night like tonight.</p></div>
+		<div class="text"><p><span class="highlight">You</span>'<span class="highlight">ve</span> <span class="highlight">no</span> <span class="highlight">need</span> <span class="highlight">to</span> <span class="highlight">light</span> <span class="highlight">a</span> <span class="highlight">night</span>-<span class="highlight">light</span>
+														<br><span class="highlight">On</span> <span class="highlight">a</span> <span class="highlight">light</span> <span class="highlight">night</span> <span class="highlight">like</span> <span class="highlight">tonight</span>,
+														<br><span class="highlight">For</span> <span class="highlight">a</span> <span class="highlight">night</span>-<span class="highlight">light</span>'<span class="highlight">s</span> <span class="highlight">light</span>'<span class="highlight">s</span> <span class="highlight">a</span> <span class="highlight">slight</span> <span class="highlight">light</span>,
+														<br><span class="highlight">And</span> <span class="highlight">tonight</span>'<span class="highlight">s</span> <span class="highlight">a</span> <span class="highlight">night</span> <span class="highlight">that</span>'<span class="highlight">s</span> <span class="highlight">light</span>.
+														<br><span class="highlight">When</span> <span class="highlight">a</span> <span class="highlight">night</span>'<span class="highlight">s</span> <span class="highlight">light</span>, <span class="highlight">like</span> <span class="highlight">tonight</span>'<span class="highlight">s</span> <span class="highlight">light</span>,
+														<br><span class="highlight">It</span> <span class="highlight">is</span> <span class="highlight">really</span> <span class="highlight">not</span> <span class="highlight">quite</span> <span class="highlight">right</span>
+														<br><span class="highlight">To</span> <span class="highlight">light</span> <span class="highlight">night</span>-<span class="highlight">lights</span> <span class="highlight">with</span> <span class="highlight">their</span> <span class="highlight">slight</span> <span class="highlight">lights</span>
+														<br><span class="highlight">On</span> <span class="highlight">a</span> <span class="highlight">light</span> <span class="highlight">night</span> <span class="highlight">like</span> <span class="highlight">tonight</span>.</p></div>
 		<div class="answer">
-			<p>Answer: /<input type="text" class="regex" size="50">/g</p>
+			<p>Answer: /<input type="text" class="regex" size="50" value="(\w+)">/g</p>
 		</div>
 	</div>
 	<div class="question">
