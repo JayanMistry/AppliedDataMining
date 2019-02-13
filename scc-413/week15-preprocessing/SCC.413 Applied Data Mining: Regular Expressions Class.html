@@ -1,0 +1,395 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+  <title>SCC.413 Applied Data Mining: Regular Expressions Class</title>
+  <script src="SCC.413%20Applied%20Data%20Mining:%20Regular%20Expressions%20Class_files/jquery.js" type="text/javascript"></script>
+  <script src="SCC.413%20Applied%20Data%20Mining:%20Regular%20Expressions%20Class_files/highlightRegex.js"></script>
+  <script type="text/javascript">
+     //<![CDATA[
+       $(function() {
+         $('input.regex').keyup(function(){
+           var regex;
+           $(this).closest('div').siblings(".text").highlightRegex();
+           try { regex = new RegExp($(this).val(), 'g') }
+           catch (e) { $(this).addClass('error') }
+
+           if (typeof regex !== 'undefined') {
+             $(this).removeClass('error');
+             if ($(this).val() != '')
+                $(this).closest('div').siblings(".text").highlightRegex(regex);
+           }
+         })
+       });
+     //]]>
+   </script>
+   <style>
+    body {
+		font-size: 14pt;
+	}
+	.highlight {
+      background: yellow;
+	  border: solid 1px red;
+    }
+
+	div.text {
+		padding: 2px 10px;
+		border: dotted 2px #CCC;
+		float: left;
+	}
+
+    input.regex {
+		font-size: 100%;
+		background: #CDE;
+    }
+
+	input.error {
+		background: #C76;
+	}
+
+    div.answer {
+		padding: 2px 10px;
+		clear: left;
+    }
+
+	div.question {
+		padding: 10px;
+		border: 1px solid;
+		margin: 10px;
+	}
+   </style>
+</head>
+
+<body>
+	<div><p>These exercises accompany the slides on Moodle. Try following 
+the slides and completing the questions when prompted. There are some <a href="#links">links at the bottom of the page</a>.</p>
+	<p>Please note that if you're unforunate enough to Internet Explorer, this page will not work. Please use another browser.</p>
+	</div>
+
+	<div class="question">
+		<h3>Question 1.</h3>
+		<p>Find all <i>a</i>'s in the sentence.</p>
+		<div class="text"><p>The c<span class="highlight">a</span>t s<span class="highlight">a</span>t on the m<span class="highlight">a</span>t.</p></div>
+		<div class="answer">
+			<p>Answer: /<input type="text" class="regex" size="50" value="a">/g</p>
+		</div>
+	</div>
+	<div class="question">
+		<h3>Question 2.</h3>
+		<p>Find all occurrences of <i>hat</i>, <i>hit</i>, <i>hot</i> and <i>hut</i>.</p>
+		<div class="text"><p>Jimmy's <span class="highlight">hat</span> couldn't protect him from the heat of the <span class="highlight">hot</span> sun, so he <span class="highlight">hit</span> the <span class="highlight">hut</span>.</p></div>
+		<div class="answer">
+			<p>Answer: /<input type="text" class="regex" size="50" value="h[a-z]t">/g</p>
+		</div>
+	</div>
+	<div class="question">
+		<h3>Question 3.</h3>
+		<p>Find all occurrences of <i>hat</i>, <i>hit</i>, <i>hot</i> and <i>hut</i>.</p>
+		<div class="text"><p>Jimmy's hat couldn't protect him from the heat of
+ the hot sun, so he hit the hut. The rhythm in the hut wasn't enough to 
+withstand the heat.</p></div>
+		<div class="answer">
+			<p>Answer: /<input type="text" class="regex" size="50">/g</p>
+		</div>
+	</div>
+	<div class="question">
+		<h3>Question 4.</h3>
+		<p>Find all letters in the sentence.</p>
+		<div class="text"><p>The cat sat on the mat.</p></div>
+		<div class="answer">
+			<p>Answer: /<input type="text" class="regex" size="50">/g</p>
+		</div>
+	</div>
+	<div class="question">
+		<h3>Question 5.</h3>
+		<p>Find all non-letters in the sentence.</p>
+		<div class="text"><p>The cat sat on the mat.</p></div>
+		<div class="answer">
+			<p>Answer: /<input type="text" class="regex" size="50">/g</p>
+		</div>
+	</div>
+	<div class="question">
+		<h3>Question 6.</h3>
+		<p>Find all 4-letter words starting with h and ending in t</p>
+		<div class="text"><p>Jimmy's hat couldn't protect him from the heat of
+ the hot sun, so he hit the hut. The rhythm in the hut wasn't enough to 
+withstand the heat.</p></div>
+		<div class="answer">
+			<p>Answer: /<input type="text" class="regex" size="50">/g</p>
+		</div>
+	</div>
+	<div class="question">
+		<h3>Question 7.</h3>
+		<p>Find all words containing <em>pick</em>.</p>
+		<div class="text"><p>Peter Piper picked a peck of pickled peppers.
+														<br>Did Peter Piper pick a peck of pickled peppers?
+														<br>If Peter Piper picked a peck of pickled peppers,
+														<br>where's the peck of pickled peppers Peter Piper picked?</p></div>
+		<div class="answer">
+			<p>Answer: /<input type="text" class="regex" size="50">/g</p>
+		</div>
+	</div>
+	<div class="question">
+		<h3>Question 8.</h3>
+		<p>Peter's 'c' key is broken, can you still find all words containing <em>pick</em>, or at least those words that should do.</p>
+		<div class="text"><p>Peter Piper piked a pek of pickled peppers.
+														<br>Did Peter Piper pick a pek of pikled peppers?
+														<br>If Peter Piper piked a peck of pickled peppers,
+														<br>where's the pek of pikled peppers Peter Piper picked?</p></div>
+		<div class="answer">
+			<p>Answer: /<input type="text" class="regex" size="50">/g</p>
+		</div>
+	</div>
+	<div class="question">
+		<h3>Question 9.</h3>
+		<p>Find every word in this tongue-twister. Note, this is basic tokenisation, you'll be doing a lot more of this later.</p>
+		<div class="text"><p>You've no need to light a night-light
+														<br>On a light night like tonight,
+														<br>For a night-light's light's a slight light,
+														<br>And tonight's a night that's light.
+														<br>When a night's light, like tonight's light,
+														<br>It is really not quite right
+														<br>To light night-lights with their slight lights
+														<br>On a light night like tonight.</p></div>
+		<div class="answer">
+			<p>Answer: /<input type="text" class="regex" size="50">/g</p>
+		</div>
+	</div>
+	<div class="question">
+		<h3>Question 10.</h3>
+		<p>Find all telephone numbers in the list.</p>
+		<div class="text"><ul><li>Lancaster University, T: 01524 65201 PC: LA1 4YW</li><li>Houses of Parliament, T: 020 72193000 PC: SW1A 0AA</li><li>Buckingham Palace, T: 020 79304832, PC: SW1A 1AA</li><li>Alistair's office: T: 01524 510348, PC: LA1 4WA</li></ul></div>
+		<div class="answer">
+			<p>Answer: /<input type="text" class="regex" size="50">/g</p>
+		</div>
+	</div>
+	<div class="question">
+		<h3>Question 11.</h3>
+		<p>Find all postcodes in the list.</p>
+		<div class="text"><ul><li>Lancaster University, T: 01524 65201 PC: LA1 4YW</li><li>Houses of Parliament, T: 020 72193000 PC: SW1A 0AA</li><li>Buckingham Palace, T: 020 79304832, PC: SW1A 1AA</li><li>Alistair's office, T: 01524 510348, PC: LA1 4WA</li></ul></div>
+		<div class="answer">
+			<p>Answer: /<input type="text" class="regex" size="50">/g</p>
+		</div>
+	</div>
+	<div class="question">
+		<h3>Question 12.</h3>
+		<p>Find all days of the week.</p>
+		<div class="text"><p>I don't care if Monday's blue
+											<br>Tuesday's gray and Wednesday too
+											<br>Thursday I don't care about you
+											<br>It's Friday I'm in love
+											<br>Monday you can fall apart
+											<br>Tuesday Wednesday break my heart
+											<br>Thursday doesn't even start
+											<br>It's Friday I'm in love</p>
+											<p>Saturday wait
+											<br>And Sunday always comes too late
+											<br>But Friday never hesitate</p>
+											<p>I don't care if Monday's black
+											<br>Tuesday Wednesday heart attack
+											<br>Thursday never looking back
+											<br>It's Friday I'm in love</p>
+											<p>... (Friday I'm in Love, The Cure)</p></div>
+		<div class="answer">
+			<p>Answer: /<input type="text" class="regex" size="50">/g</p>
+		</div>
+	</div>
+	<div class="question">
+		<h3>Question 13.</h3>
+		<p>Find all prices in the menu.</p>
+		<div class="text"><p>specialties
+											<br>P A S T A
+											<br>TOMATO BASIL PASTA $13.95
+											<br>Grilled Chicken, Fresh Mozzarella, a Touch of Garlic and Penne Pasta. Light and Fresh
+											<br>(Full-size portion only)
+											<br>FETTUCCINI ALFREDO $14.95 PASTA CARBONARA $14.95
+											<br>A Rich Parmesan Cream Sauce Spaghettini with Smoked Bacon, Green Peas
+											<br>with Chicken $17.95 and a Garlic-Parmesan Cream Sauce
+											<br>with Chicken $17.95
+											<br>FOUR CHEESE PASTA $13.95 EVELYN'S FAVORITE PASTA $14.95
+											<br>Penne Pasta, Mozzarella, Ricotta, Romano and Penne Tossed with Broccoli, Oven-Dried Tomato,
+											<br>Parmesan Cheeses, Marinara Sauce and Fresh Basil Roasted Eggplant, Peppers, Artichoke, Kalamata
+											<br>with Chicken $16.95 Olives, Garlic and Pine Nuts
+											<br>PASTA WITH MEAT SAUCE $14.50
+											<br>A Rich Meat Sauce Slowly Simmered with Tomatoes, Garlic and Herbs
+											<br>LOUISIANA CHICKEN PASTA $16.95
+											<br>Parmesan Crusted Chicken Served Over Pasta with Mushrooms,
+											<br>PASTA DA VINCI $16.95
+											<br>Sauteed Chicken, Mushrooms and Onions in a Delicious Madeira Wine Sauce
+											<br>Tossed with Penne Pasta
+											<br>FETTUCCINI WITH CHICKEN AND SUN-DRIED TOMATOES $15.95
+											<br>In a Sun-Dried Tomato Sauce with Garlic, Cream and Parmesan Cheese
+											<br>FARFALLE WITH CHICKEN AND ROASTED GARLIC $16.95
+											<br>Bow-Tie Pasta, Chicken, Mushrooms, Tomato, Pancetta, Peas
+											<br>and Caramelized Onions in a Roasted Garlic-Parmesan Cream Sauce
+											<br>GARLIC NOODLES $13.95
+											<br>Spaghettini, Fresh Asparagus, Shiitake Mushrooms, Oven-Roasted Tomatoes
+											<br>and Parmesan in a Delicious Garlic Sauce
+											<br>with Chicken $16.95 with Shrimp $17.95
+											<br>SPICY CHICKEN CHIPOTLE PASTA $16.50
+											<br>Penne Pasta, Honey Glazed Chicken, Asparagus, Red and Yellow Peppers, Peas,
+											<br>Garlic and Onion in a Spicy Chipotle Parmesan Cream Sauce
+											<br>SHRIMP WITH ANGEL HAIR $16.95 BISTRO SHRIMP PASTA $17.95
+											<br>Large Shrimp Sauteed with Lemon, Garlic, Herbs, Crispy Battered Shrimp, Fresh Mushrooms,
+											<br>Fresh Basil and Tomato on Top of Angel Hair Pasta Tomato and Arugula Tossed with Spaghettini
+											<br>with a Touch of Marinara Sauce and a Basil-Garlic-Lemon Cream Sauce
+											<br>CAJUN JAMBALAYA PASTA $20
+											<br>Our most popular pasta dish!
+											<br>Shrimp and Chicken Sauteed with Tomato, Onions and Peppers
+											<br>in a Very Spicy Cajun Sauce. All on Top of Fresh Linguini
+											<br>(Full-size portion only)
+											<br>Lunch-Sized Portions are Available until 5:00 P.M. $10 to $15</p></div>
+		<div class="answer">
+			<p>Answer: /<input type="text" class="regex" size="50">/g</p>
+		</div>
+	</div>
+	<div class="question">
+		<h3>Question 14.</h3>
+		<p>Find all occurrences of the word <em>he</em>.</p>
+		<div class="text"><p>On a balmy Midsummer's Eve he found her in the heather.</p></div>
+		<div class="answer">
+			<p>Answer: /<input type="text" class="regex" size="50">/g</p>
+		</div>
+	</div>
+	<div class="question">
+		<h3>Question 15.</h3>
+		<p>Find all occurrences of <em>was</em> <u>not</u> followed by <em>going</em>.</p>
+		<div class="text"><p>I was going swimming. I was swimming. She was singing songs. I was bringing songs for her to sing.</p></div>
+		<div class="answer">
+			<p>Answer: /<input type="text" class="regex" size="50">/g</p>
+		</div>
+	</div>
+	<div class="question">
+		<h3>Question 16.</h3>
+		<p>Using positive lookahead, find the day when "I'm in love".</p>
+		<div class="text"><p>I don't care if Monday's blue
+											<br>Tuesday's gray and Wednesday too
+											<br>Thursday I don't care about you
+											<br>It's Friday I'm in love
+											<br>Monday you can fall apart
+											<br>Tuesday Wednesday break my heart
+											<br>Thursday doesn't even start
+											<br>It's Friday I'm in love</p>
+											<p>Saturday wait
+											<br>And Sunday always comes too late
+											<br>But Friday never hesitate</p>
+											<p>I don't care if Monday's black
+											<br>Tuesday Wednesday heart attack
+											<br>Thursday never looking back
+											<br>It's Friday I'm in love</p>
+											<p>... (Friday I'm in Love, The Cure)</p></div>
+		<div class="answer">
+			<p>Answer: /<input type="text" class="regex" size="50">/g</p>
+		</div>
+	</div>
+	<div class="question">
+		<h3>Question 17.</h3>
+		<p>Find all of the Queens not named Elizabeth.</p>
+		<div class="text"><ul>
+		<li>King William I, the Conqueror 1066 - 1087</li>
+		<li>King Henry I 1100 - 1135</li>
+		<li>King Stephen 1135 - 1154</li>
+		<li>King Henry II 1154 - 1189</li>
+		<li>King Richard I the Lionheart 1189 - 1199</li>
+		<li>King John I 1199 - 1216</li>
+		<li>King Henry III 1216 - 1272</li>
+		<li>King Edward I 1272 - 1307</li>
+		<li>King Edward II 1307 - 1327</li>
+		<li>King Edward III 1327 - 1377</li>
+		<li>King Richard II 1377 - 1399</li>
+		<li>King Henry IV 1399 - 1413</li>
+		<li>King Henry V 1413 - 1422</li>
+		<li>King Henry VI 1422 - 1461, 1470 - 1471</li>
+		<li>King Edward IV 1461 -1470, 1471 - 1483</li>
+		<li>King Edward V 1483 - 1483</li>
+		<li>King Richard III 1483 - 1485</li>
+		<li>King Henry VII 1485 - 1509</li>
+		<li>King Henry VIII 1509 - 1547</li>
+		<li>King Edward VI 1547 - 1553</li>
+		<li>Queen Mary I (Bloody Mary) 1553 - 1558</li>
+		<li>Queen Elizabeth I 1558 - 1603</li>
+		<li>King James I 1603 - 1625</li>
+		<li>King Charles I 1625 - 1649</li>
+		<li>King Charles II 1660 - 1685</li>
+		<li>King James II 1685 - 1688</li>
+		<li>King William III 1688 - 1702 and Queen Mary II 1688 - 1694</li>
+		<li>Queen Anne 1702 - 1714</li>
+		<li>King George I 1714 - 1727</li>
+		<li>King George II 1727 - 1760</li>
+		<li>King George III 1760 - 1820</li>
+		<li>King George IV 1820 - 1830</li>
+		<li>King William IV 1830 - 1837</li>
+		<li>Queen Victoria 1837 - 1901</li>
+		<li>King Edward VII 1901 - 1910</li>
+		<li>King George V 1910 - 1936</li>
+		<li>King Edward VIII June 1936</li>
+		<li>King George VI 1936 - 1952</li>
+		<li>Queen Elizabeth II 1952 - present day</li>
+		</ul></div>
+		<div class="answer">
+			<p>Answer: /<input type="text" class="regex" size="50">/g</p>
+		</div>
+	</div>
+	<div class="question">
+		<h3>Question 18.</h3>
+		<p>Advanced: detect <em>n</em> (e.g. <em>5</em>) letter palindromes in this list.</p>
+		<div class="text"><ol>
+		<li>civic</li>
+		<li>dewed</li>
+		<li>deified</li>
+		<li>dad</li>
+		<li>mum</li>
+		<li>devoved</li>
+		<li>hannah</li>
+		<li>peeweep</li>
+		<li>repaper</li>
+		<li>kayak</li>
+		<li>minim</li>
+		<li>radar</li>
+		<li>murdrum</li>
+		<li>malayalam</li>
+		<li>madam</li>
+		<li>lemel</li>
+		<li>level</li>
+		<li>racecar</li>
+		<li>radar</li>
+		<li>redder</li>
+		<li>bob</li>
+		<li>pop</li>
+		<li>tot</li>
+		<li>refer</li>
+		<li>reviver</li>
+		<li>rotator</li>
+		<li>rotavator</li>
+		<li>stats</li>
+		<li>solos</li>
+		<li>tenet</li>
+		<li>terret</li>
+		<li>testset</li>
+		<li>kinikinik</li>
+		<li>wassamassaw</li>
+		</ol></div>
+		<div class="answer">
+			<p>Answer: /<input type="text" class="regex" size="50">/g</p>
+		</div>
+	</div>
+
+<div class="question" id="links">
+	<p>Useful links:</p>
+	<ul>
+		<li>Regular expression test and display tools:
+			<ul>
+				<li><a href="http://leaverou.github.io/regexplained/">regexplained</a></li>
+        		<li><a href="https://www.debuggex.com/">Debuggex</a></li>
+        		<li><a href="https://regexper.com/">regexper</a>
+			</li></ul>
+		</li>
+		<li>Regular expressions info: <a href="http://www.regular-expressions.info/">http://www.regular-expressions.info/</a></li>
+		<li>Good (further) regex tutorial: <a href="http://oreillynet.com/pub/e/2597">http://oreillynet.com/pub/e/2597</a></li>
+		<li>Regular expression tips on Twitter: <a href="http://twitter.com/RegexTip">http://twitter.com/RegexTip</a></li>
+		<li>Regex crosswords (!): <a href="http://regexcrossword.com/">http://regexcrossword.com/</a></li>
+		<li><a href="http://ucrel.lancs.ac.uk/regexclass/scc-413/regexp-crossword.jpg">A big regex crossword</a></li>
+	</ul>
+</div>
+
+
+
+</body></html>
