@@ -7,6 +7,15 @@ __pycache__/
 *.so
 
 # Distribution / packaging
+twitter-collection/
+mp_accounts/
+mps/
+*.zip
+*.txt
+*.csv
+celebs-gb/
+celebs-usa/
+celebs-gb-json/
 .Python
 build/
 develop-eggs/
