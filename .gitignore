@@ -16,6 +16,9 @@ __pycache__/
 *.rar
 *.tar
 *.zip
+celebs-gb-json/
+celebs-other-json/
+CelebFile
 twitter-collection/
 mp_accounts/
 mps/
