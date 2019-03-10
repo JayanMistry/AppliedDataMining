@@ -7,6 +7,14 @@ __pycache__/
 *.so
 
 # Distribution / packaging
+.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
 twitter-collection/
 mp_accounts/
 mps/
