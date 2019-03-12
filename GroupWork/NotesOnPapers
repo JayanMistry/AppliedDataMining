@@ -1,0 +1,42 @@
+As we know it, irony is unique to humans. 
+
+Current nlp methods rely too heavily on
+shallow, unstructured, syntactic modeling of text to consistently discern ironic intent.
+
+
+Irony detection requires semantics that cannot be inffered from word counts alone
+
+Definition of Irony: the expression of one's meaning by using language that normally signifies the opposite, typically for humorous or emphatic effect.
+
+Simply put its a when the speaker says the opposite of what they mean
+
+Definition of Sarcasm: the use of irony to mock or convey contempt.
+
+What are the papers exploring? What were the commonalities and differences?
+- They all explored sarcasm, common theme is that they all identify sarcasm as a very hard problem but humans do it with ease.
+- Children as young as 6 are able to do it (Pexman and Glenwright 2007).
+- Accuractely classifying sarcasm could significantly improve models for sentiment analysis(Davidov et al. 2010; Tepperman et al. 2006), (Pang and Lee 2004).
+- Example classifying negative or postive reviews, verbal irony is responsible for many of the errors made by state-of-the-art methods for this
+task (Carvalho et al. 2009); 
+- Furthermore any model hoping to truly understand human text must distingush between
+the sincere and ironic texts 
+
+    What are the papers exploring? What were the commonalities and differences?
+    How did they explore the topic? (i.e. what was the methodology?) How did they differ?
+    What did they find and contribute?
+    What was good about the papers? What was bad?
+
+10-15 mins
+
+slide 1 - intro
+slide 2 - content
+Slide 3 - Selection and rationale of chosen extra papers
+- go through papers - high level 
+slide 3 - define irony + sarcasm + examples 
+slide 4 - What were the papers exploring? 
+slide 5 - common themes and topic
+- They all explored sarcasm, common theme is that they all identify sarcasm as a very hard problem but humans do it with ease.
+Slide 7 - The Bad
+Slide 6 - The Positive
+Slide 8 - Understanding and description of limitations
+
