@@ -21,6 +21,9 @@ celebs-other-json/
 CelebFile
 twitter-collection/
 mp_accounts/
+scc-413/week19-classification3/mps-json-10/
+scc-413/week19-classification3/sentiment/
+scc-413/week19-classification3/celebs-gb-json-10/
 mps/
 *.zip
 *.txt
