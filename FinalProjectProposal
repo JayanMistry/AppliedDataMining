@@ -1,10 +1,13 @@
 Project Proposal:
 
-Using twitter data, train a classifier to associate tweets with the following metadata:
+Using twitter data, train a classifier(ensembles) to associate tweets with the following metadata:
 
 Age
 Gender
 Age Range
 YearOfBirth
+Setiment
 
 Once that is done, see if I can extract the rules the classifier has used to determine a users metadata and see if tweets can be modified in a specific way so that they are now classified as a certain age/gender 
+
+So you could have a text box with the 
