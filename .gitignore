@@ -16,6 +16,7 @@ CombinedCelebFile
 *.rar
 *.tar
 *.zip
+FinalProject/Data/
 celebs-gb-json/
 celebs-other-json/
 CelebFile
