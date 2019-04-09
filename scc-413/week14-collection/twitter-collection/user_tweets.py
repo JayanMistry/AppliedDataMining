@@ -18,19 +18,21 @@ def get_user_tweets(screen_name):
         #tweet_mode="extended" allows for full text tweets, rather than truncated (i.e. over 140 chars)
         #https://developer.twitter.com/en/docs/tweets/timelines/api-reference/get-statuses-user_timeline.html
         new_tweets = twitter.get_user_timeline(screen_name=screen_name,count=200,include_rts=False,tweet_mode="extended")
-
-        #user_tweets.extend(new_tweets)
+	
+        #user_timeline = twitter.search(q='@puremichigan', include_rts=0)
+        user_tweets.extend(new_tweets)
 
         #save the id of the oldest tweet less one, this is the starting point for collecting further tweets.
-        #oldest = user_tweets[-1]['id'] - 1
+        oldest = user_tweets[-1]['id'] - 1
         #keep grabbing tweets until there are no tweets left to grab. Twitter limits us to 3,200 (including retweets)
-        #while len(new_tweets) > 0:
+        while len(new_tweets) > 0:
             #all subsequent requests use the max_id param to prevent duplicates
-            #new_tweets = twitter.get_user_timeline(screen_name=screen_name,count=200,include_rts=False,tweet_mode="extended",max_id=oldest)
-            #user_tweets.extend(new_tweets)
-            #oldest = user_tweets[-1]['id'] - 1
-            #print("...%s tweets downloaded so far" % (len(user_tweets)))
-            
+            new_tweets = twitter.get_user_timeline(screen_name=screen_name,count=200,include_rts=False,tweet_mode="extended",max_id=oldest)
+            user_tweets.extend(new_tweets)
+            oldest = user_tweets[-1]['id'] - 1
+            print("...%s tweets downloaded so far" % (len(user_tweets)))
+            print(twitter.show_user(screen_name=screen_name))
+   
     except TwythonError as e:
         print(e)
 
@@ -44,6 +46,7 @@ if __name__ == '__main__':
     #pass in the screen name of the account you want to download
     screen_name = sys.argv[1]
     tweets = get_user_tweets(screen_name)
-    tweets_json.to_just_time_and_text(tweets, filepath="%s_tweets.json" % screen_name)
-    #tweets_json.to_full_json(tweets, filepath="%s_tweets.json" % screen_name)
+    #tweets_json.to_just_time_and_text(tweets, filepath="%s_tweets.json" % screen_name)
+    tweets_json.to_full_json(tweets, filepath="%s_tweets.json" % screen_name)
     #tweets_json.to_minimal_json(tweets, 'result_test.json')
+    print(twitter.show_user(screen_name=screen_name))

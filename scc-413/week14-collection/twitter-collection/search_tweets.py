@@ -21,10 +21,10 @@ def search_twitter(search_term, limit):
         search_results = twitter.search(q=search_term,tweet_mode="extended",count=100)
 	#search_results = twitter.search(q='from:LancasterUni AND snow ',tweet_mode="extended",count=100)
 	#search_results = twitter.search(q='#lovelancaster AND snow',tweet_mode="extended",count=100)
-	geocode = '-2.7868366,54.0044766,1000mi' # latitude,longitude,distance(mi/km)
-	search_results = twitter.search(q=search_term,tweet_mode="extended",count=100, geocode=geocode)
+	#geocode = '-2.7868366,54.0044766,1000mi' # latitude,longitude,distance(mi/km)
+	#search_results = twitter.search(q=search_term,tweet_mode="extended",count=100, geocode=geocode)
         tweets.extend(search_results['statuses'])
-	print(tweets)
+        print(tweets)
 
         #save the id of the oldest tweet less one, this is the starting point for collecting further tweets.
         oldest = tweets[-1]['id'] - 1
@@ -61,4 +61,5 @@ if __name__ == '__main__':
     search_term = sys.argv[1]
     limit = int(sys.argv[2])
     tweets = search_twitter(search_term, limit)
-    tweets_json.to_full_json(tweets, filepath="%s_tweets.txt" % search_term)
+    #tweets_json.to_full_json(tweets, filepath="%s_tweets.txt" % search_term)
+    tweets_json.to_minimal_json(tweets, filepath="%s_tweets.txt" % search_term)
