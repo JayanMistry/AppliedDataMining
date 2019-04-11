@@ -47,6 +47,6 @@ if __name__ == '__main__':
     screen_name = sys.argv[1]
     tweets = get_user_tweets(screen_name)
     #tweets_json.to_just_time_and_text(tweets, filepath="%s_tweets.json" % screen_name)
-    tweets_json.to_full_json(tweets, filepath="%s_tweets.json" % screen_name)
-    #tweets_json.to_minimal_json(tweets, 'result_test.json')
-    print(twitter.show_user(screen_name=screen_name))
+    #tweets_json.to_full_json(tweets, filepath="%s_tweets.json" % screen_name)
+    tweets_json.to_minimal_json(tweets, filepath="%s_tweets.json" % screen_name)
+    #print(twitter.show_user(screen_name=screen_name))
