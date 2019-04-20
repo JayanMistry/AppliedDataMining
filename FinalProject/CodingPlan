@@ -1,9 +1,0 @@
-Gender and Age Classifier
-
-First make two seperate age and gender classifiers, then use gender to infer age in a seperate clf
-
-Text -> Ageclf = 21
-
-Text -> Genderclf = M
-
-Text -> Genderclf -> Text + (M/F) -> Ageclf -> M21

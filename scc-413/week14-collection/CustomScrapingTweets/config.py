@@ -1,6 +1,0 @@
-consumer_key = 'IEgLCo6OWBcCTf4GdPWJHDUXq'
-consumer_secret = '5l3TnPxudSEITw2pcBtrkNx61VtThOxwrTJp7WNjOtuCwRCRzH'
-access_token = '922513892319916032-BSf92Uuy9Zky9zLSsTISQSZjMKeGP70'
-access_secret = 'pRyS5DlTeHUGe6PwymVT4p6DknHIGXyIM2iGZcUnx378e'
-search_term = 'APPL'
-data_directory = 'data'

@@ -1,6 +1,0 @@
-ftfy
-nltk
-regex
-grapheme
-wordcloud
-matplotlib
